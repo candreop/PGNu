@@ -4,7 +4,7 @@ This repository includes the source code for my Neutrino Lectures delivered to p
 
 # Author
 
-Dr. Costas Andreopoulos, *FHEA*  < constantinos.andreopoulos \at cern.ch >
+Prof. Costas Andreopoulos, *FHEA*  < constantinos.andreopoulos \at cern.ch >
 
 <pre>
  University of Liverpool          |  U.K. Research & Innovation (UKRI)
