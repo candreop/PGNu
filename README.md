@@ -1,4 +1,4 @@
-# Postgraduate Neutrino Lectures
+# Postgraduate Lectures in Neutrino Physics
 
 This repository includes the source code for my Neutrino Lectures delivered to post-graduate students in the University of Liverpool.
 
