@@ -1,0 +1,80 @@
+\usepackage{pgfpages}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}        % line up tabular columns on the decimal place with D{.}{.}{-1}
+\usepackage{relsize}
+\usepackage{accents}
+\usepackage{cancel}         % diagonal strikethrough in math mode
+\usepackage{mathtools}      % \xRightarrow{text} etc
+\usepackage[printwatermark]{xwatermark}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{trees}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{snakes}
+
+\newcommand{\thislecture}{-1}
+
+% ............................................................
+% new watermark (transparent)
+
+% \newsavebox\mybox
+% \savebox\mybox{
+%    \tikz[color=red,opacity=0.3]
+%       \node{UoL Post-Graduate Training Course};
+%  }
+% \newwatermark*[
+%   allpages,
+%   angle=30,
+%   scale=2,
+%   xpos=0,
+%   ypos=0
+% ]{\usebox\mybox}
+
+% ............................................................
+% more colours
+
+\definecolor {cadmiumred}     {rgb} {0.89, 0.00, 0.13}
+\definecolor {cadmiumgreen}   {rgb} {0.00, 0.42, 0.24}
+\definecolor {capri}          {rgb} {0.00, 0.75, 1.00}
+\definecolor {amber(sae/ece)} {rgb} {1.00, 0.49, 0.00}
+\definecolor {amber}          {rgb} {1.00, 0.49, 0.00}
+
+% ............................................................
+%
+
+\usetheme{Madrid}
+
+\newcommand{\ck}{$\checkmark$}                   % used?
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} % used?
+\newcommand*{\pbar}[1]{\accentset{(-)}{#1}}      % use pbar to use (-) abobe a symbol, eg \nu
+
+% Non-default colours for page with extra details
+\definecolor{dBG1}{RGB}{143,0,0}     % red
+\definecolor{dBG2}{RGB}{190,0,0}     % lighter red
+\definecolor{dBG3}{RGB}{236,236,236} % gray
+\definecolor{dFG3}{RGB}{143,0,0}     % red
+
+\newenvironment<>{white_block}[1]{%
+\begin{actionenv}#2%
+  \definecolor{white_block_header}{RGB}{204,229,255}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=white_block_header}
+%   \setbeamercolor{block body}{fg=black,bg=olive!50}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+\pgfpagesuselayout{resize to}[a4paper,landscape,border shrink=5mm]
+
+\tikzset{snake it/.style={decorate, decoration=snake}} % wavy line
