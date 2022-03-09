@@ -1,11 +1,15 @@
 #
-# Costas Andreopoulos' Neutrino Physics Lectures
+# Makefile for Liverpool Post-Graduate Neutrino Physics Lectures
+#
+# Costas Andreopoulos <constantinos.andrepoulos@cern.ch>
 #
 # Makefile
 #
 
-ACYEAR  = 202021
+ACYEAR  = 202121
 VERSION = v1
+
+all : liv
 
 intro         : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Intro\)
 osc_pheno     : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 01\)
@@ -13,15 +17,15 @@ osc_solar     : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 02\)
 osc_atmo      : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 03\)
 osc_future3nu : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 04\)
 osc_sterile   : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 05\)
-int_basics    : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 06\)
-int_qel       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 07\)
-int_res       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 08\)
-int_dis       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 09\)
-int_coh       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 10\)
-mass          : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 11\)
-astro         : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 12\)
-all           : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}
-liv           : NAME = NUPHYS_${ACYEAR}-Liverpool-Slides-${VERSION}
+int_basics    : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 06\) # in devel
+int_qel       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 07\) # in devel
+int_res       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 08\) # in devel
+int_dis       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 09\) # in devel
+int_coh       : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 10\) # in devel
+mass          : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 11\) # in devel
+astro         : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 12\) # in devel
+dev           : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}
+liv           : NAME = NUPHYS_${ACYEAR}-Slides-${VERSION}
 
 intro         : tex_start tex_intro         tex_end pdf
 osc_pheno     : tex_start tex_osc_pheno     tex_end pdf
@@ -36,7 +40,7 @@ int_dis       : tex_start tex_int_dis       tex_end pdf
 int_coh       : tex_start tex_int_coh       tex_end pdf
 mass          : tex_start tex_mass          tex_end pdf
 astro         : tex_start tex_astro         tex_end pdf
-all           : tex_start tex_intro tex_osc_pheno tex_osc_solar tex_osc_atmo tex_osc_future3nu tex_osc_sterile tex_int_basics tex_int_qel tex_int_res tex_int_dis tex_int_coh tex_mass tex_end pdf
+dev           : tex_start tex_intro tex_osc_pheno tex_osc_solar tex_osc_atmo tex_osc_future3nu tex_osc_sterile tex_int_basics tex_int_qel tex_int_res tex_int_dis tex_int_coh tex_mass tex_end pdf
 liv           : tex_start tex_intro tex_osc_pheno tex_osc_solar tex_osc_atmo tex_osc_future3nu tex_osc_sterile tex_end pdf
 
 tex_start:
